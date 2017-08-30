@@ -39,3 +39,12 @@ class BookModelTests(BookAssertion):
 
         self.assertBookModel(actual_book, name, page, publisher)
 
+    def test_book_returns_str(self):
+        book = Book()
+
+        name = 'Book Name'
+        self.creating_a_book_and_saving(name)
+        saved_book = Book.objects.all()[0]
+
+        self.assertEqual(str(saved_book), name)
+
