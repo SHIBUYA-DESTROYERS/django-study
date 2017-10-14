@@ -16,7 +16,7 @@ class Impression(models.Model):
     感想
     """
     book = models.ForeignKey(Book, verbose_name='書籍', related_name='impressions')
-    comment = models.TextField('コメント', blank=True)
+    comment = models.TextField('コメント')
 
     def __str__(self):
         return self.comment
